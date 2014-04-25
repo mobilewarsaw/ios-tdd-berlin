@@ -4,19 +4,24 @@
 #import "FakePollAgendaProvider.h"
 #import "FakePollManager.h"
 #import "FakePollViewController.h"
+#import "FakeViewValidatorFactory.h"
+#import "SpecValidatorFixture.h"
 
 SpecBegin(PollViewControllerSpec)
 
 describe(@"PollViewController", ^{
     __block PollViewController *controller;
-    __block FakePollAgendaProvider *agendaProvider;
+    __block AgendaProvider *agendaProvider;
     __block FakePollManager *pollManager;
+    __block FakeViewValidatorFactory *validatorFactory;
 
     beforeEach(^{
         agendaProvider = [FakePollAgendaProvider new];
         pollManager = [FakePollManager new];
+        validatorFactory = [FakeViewValidatorFactory new];
         controller = [[PollViewController alloc] initWithPollManager:pollManager
-                                                      agendaProvider:agendaProvider];
+                                                      agendaProvider:agendaProvider
+                                                    validatorFactory:validatorFactory];
     });
 
     afterEach(^{
@@ -31,6 +36,10 @@ describe(@"PollViewController", ^{
 
         it(@"should have poll manager injected", ^{
             expect(controller.pollManager).to.equal(pollManager);
+        });
+
+        it(@"should have validator factory inejcted", ^{
+            expect(controller.validatorFactory).to.equal(validatorFactory);
         });
 
         it(@"should set title", ^{
@@ -91,6 +100,28 @@ describe(@"PollViewController", ^{
                 [controller viewWillAppear:NO];
                 expect([(FakePollViewController *)controller didCallConfigureRightNavigationItem]).to.beTruthy();
             });
+        });
+
+    });
+
+    describe(@"validating in delegates", ^{
+        __block SpecValidatorFixture *validator;
+
+        beforeEach(^{
+            validator = [SpecValidatorFixture new];
+            validatorFactory.validator = validator;
+        });
+
+        it(@"should validate text for text field editing", ^{
+            [controller textFieldDidEndEditing:nil];
+            expect(validator.didCallValidateText).to.beTruthy();
+            expect(validator.infoMethodCalled).to.beTruthy();
+        });
+
+        it(@"should validate text for text view end editing", ^{
+            [controller textViewDidEndEditing:nil];
+            expect(validator.didCallValidateText).to.beTruthy();
+            expect(validator.infoMethodCalled).to.beTruthy();
         });
 
     });

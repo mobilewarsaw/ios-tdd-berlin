@@ -17,9 +17,7 @@ static NSString *kPollCompleted = @"kPollCompleted";
 @property(nonatomic, readwrite, getter = isPollCompleted) BOOL pollCompleted;
 @end
 
-@implementation PollManager {
-
-}
+@implementation PollManager
 
 + (instancetype)sharedInstance {
     static PollManager *sharedManager = nil;
@@ -31,7 +29,7 @@ static NSString *kPollCompleted = @"kPollCompleted";
 }
 
 - (NSString *)title {
-    return @"Poll";
+    return NSLocalizedString(@"Poll", nil);
 }
 
 - (void)sendPoll:(Poll *)poll completion:(void (^)(BOOL))completion {

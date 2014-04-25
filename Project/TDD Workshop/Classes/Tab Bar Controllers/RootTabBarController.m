@@ -5,6 +5,7 @@
 #import "PollViewController.h"
 #import "PollManager.h"
 #import "AgendaProvider.h"
+#import "ViewValidatorFactory.h"
 
 
 @implementation RootTabBarController
@@ -22,7 +23,8 @@
     UINavigationController *agendaNavigationController = [[UINavigationController alloc] initWithRootViewController:agendaViewController];
 
     PollViewController *pollController = [[PollViewController alloc] initWithPollManager:[PollManager sharedInstance]
-                                                                          agendaProvider:[AgendaProvider new]];
+                                                                          agendaProvider:[AgendaProvider new]
+                                                                        validatorFactory:[ViewValidatorFactory new]];
     UINavigationController *pollNavigationController = [[UINavigationController alloc] initWithRootViewController:pollController];
 
     self.viewControllers = @[speakersNavigationController, photoStreamNavigationController, agendaNavigationController, pollNavigationController];

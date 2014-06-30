@@ -10,7 +10,7 @@
 
 @class AgendaProvider;
 
-@interface AgendaCollectionViewDataSource : NSObject <UICollectionViewDataSource>
+@interface AgendaCollectionViewDataSource : NSObject <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property(nonatomic, strong) AgendaProvider *agendaProvider;
 

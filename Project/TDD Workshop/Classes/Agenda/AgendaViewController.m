@@ -6,6 +6,8 @@
 //
 
 #import "AgendaViewController.h"
+#import "AgendaCollectionViewDataSource.h"
+#import "AgendaProvider.h"
 
 
 @implementation AgendaViewController
@@ -15,8 +17,17 @@
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
         self.tabBarItem.image = [UIImage imageNamed:@"agenda"];
+        self.title = NSLocalizedString(@"Agenda", nil);
+
+        self.agendaDataSource = [[AgendaCollectionViewDataSource alloc] initWithProvider:[AgendaProvider new]];
     }
     return self;
 }
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.agendaDataSource setupWithCollectionView:self.collectionView];
+}
+
 
 @end

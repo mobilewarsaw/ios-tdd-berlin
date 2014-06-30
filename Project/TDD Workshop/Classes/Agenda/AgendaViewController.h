@@ -13,7 +13,6 @@
 
 @interface AgendaViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 
-@property(nonatomic, strong) AgendaProvider *agendaProvider;
 @property(nonatomic, strong) AgendaCollectionViewDataSource *agendaDataSource;
 
 @end

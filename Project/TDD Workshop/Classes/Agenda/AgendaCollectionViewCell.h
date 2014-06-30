@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class AgendaItem;
 
 @interface AgendaCollectionViewCell : UICollectionViewCell
 @property(nonatomic, strong) UILabel *titleLabel;
@@ -16,4 +17,5 @@
 @property(nonatomic, strong) UIView *typeView;
 @property(nonatomic, strong) UILabel *speakersLabel;
 
+- (void)configureForItem:(AgendaItem *)item;
 @end

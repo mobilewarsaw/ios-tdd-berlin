@@ -10,7 +10,7 @@
 #import "AgendaProvider.h"
 #import "AgendaCollectionViewCell.h"
 
-NSString * const AgendaCollectionViewCellIdentifier = @"AgendaCollectionViewCellId";
+NSString *const AgendaCollectionViewCellIdentifier = @"AgendaCollectionViewCellId";
 
 @implementation AgendaCollectionViewDataSource
 
@@ -23,17 +23,27 @@ NSString * const AgendaCollectionViewCellIdentifier = @"AgendaCollectionViewCell
 }
 
 - (void)setupWithCollectionView:(UICollectionView *)collectionView {
+    collectionView.delegate = self;
+    collectionView.dataSource = self;
+    [collectionView registerClass:[AgendaCollectionViewCell class]
+       forCellWithReuseIdentifier:AgendaCollectionViewCellIdentifier];
 }
 
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 0;
+    return self.agendaProvider.agendaItems.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     AgendaCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:AgendaCollectionViewCellIdentifier
                                                                                forIndexPath:indexPath];
+
+    AgendaItem *item = self.agendaProvider.agendaItems[(NSUInteger) indexPath.item];
+    [cell configureForItem:item];
     return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(CGRectGetWidth(collectionView.frame), 64);
 }
 
 @end

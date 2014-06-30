@@ -8,6 +8,8 @@
 
 #import "AgendaCollectionViewCell.h"
 #import "UIColor+TDDWorkshop.h"
+#import "AgendaItem.h"
+#import "Speaker.h"
 
 
 @implementation AgendaCollectionViewCell
@@ -15,7 +17,7 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [[UIColor barsBackgroundTintColor] colorWithAlphaComponent:0.3];
+        self.backgroundColor = [UIColor whiteColor];
 
         UIView *typeView = [UIView new];
         typeView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -45,6 +47,17 @@
     }
 
     return self;
+}
+
+- (void)configureForItem:(AgendaItem *)item {
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterMediumStyle];
+    self.durationLabel.text = [NSString stringWithFormat:@"%0.f", item.duration / 60];
+    self.titleLabel.text = item.title;
+    self.startDateLabel.text = [formatter stringFromDate:item.startDate];
+    Speaker *speaker = item.speakers.firstObject;
+    self.speakersLabel.text = speaker.name;
 }
 
 - (UILabel *)newLabelWithTextStyle:(NSString *)textStyle {
@@ -90,5 +103,4 @@
 
     [super updateConstraints];
 }
-
 @end

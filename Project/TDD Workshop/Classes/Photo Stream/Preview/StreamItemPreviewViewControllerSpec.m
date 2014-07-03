@@ -17,6 +17,12 @@ describe(@"StreamItemPreviewViewController", ^{
 
     describe(@"when view is loaded", ^{
 
+        __block UICollectionView *collectionView;
+
+        beforeEach(^{
+            collectionView = (UICollectionView *) streamItemPreviewViewController.view;
+        });
+
         it(@"should be collection view", ^{
             expect(streamItemPreviewViewController.view).to.beKindOf([UICollectionView class]);
         });
@@ -26,19 +32,18 @@ describe(@"StreamItemPreviewViewController", ^{
         });
 
         it(@"should have custom layout", ^{
-            UICollectionView *collectionView = (UICollectionView *) streamItemPreviewViewController.view;
             expect(collectionView.collectionViewLayout).to.beKindOf([StreamItemPreviewLayout class]);
         });
 
         it(@"should have paging enabled", ^{
-            //TODO: Implement me!
-            //Hint: check pagingEnabled property on collection view
+            expect(collectionView.pagingEnabled).to.beTruthy();
         });
 
         it(@"should be horizontally scrollable", ^{
-            //TODO: Implement me!
-            //Hint: check scrollDirection on flow layout
+            StreamItemPreviewLayout *streamItemPreviewLayout = (StreamItemPreviewLayout *) collectionView.collectionViewLayout;
+            expect(streamItemPreviewLayout.scrollDirection).to.equal(UICollectionViewScrollDirectionHorizontal);
         });
+
     });
 
 });

@@ -33,6 +33,7 @@
 - (void)loadView {
     StreamItemPreviewLayout *flowLayout = [StreamItemPreviewLayout new];
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+    collectionView.pagingEnabled = YES;
     collectionView.backgroundColor = [UIColor whiteColor];
     self.view = collectionView;
 }

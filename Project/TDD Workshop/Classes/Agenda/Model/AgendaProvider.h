@@ -10,4 +10,6 @@
 @interface AgendaProvider : NSObject
 @property(nonatomic, readonly) NSArray *agendaItems;
 
+- (void)reloadAgendaWithCompletionHandler:(void(^)(void))completionHandler;
+
 @end

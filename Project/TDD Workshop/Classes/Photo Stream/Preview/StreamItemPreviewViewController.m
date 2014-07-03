@@ -5,6 +5,7 @@
 
 #import "StreamItemPreviewViewController.h"
 #import "StreamItem.h"
+#import "StreamItemPreviewLayout.h"
 
 
 @implementation StreamItemPreviewViewController
@@ -30,10 +31,10 @@
 #pragma mark - View life cycle
 
 - (void)loadView {
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[self.streamItem image]];
-    imageView.backgroundColor = [UIColor whiteColor];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.view = imageView;
+    StreamItemPreviewLayout *flowLayout = [StreamItemPreviewLayout new];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+    collectionView.backgroundColor = [UIColor whiteColor];
+    self.view = collectionView;
 }
 
 #pragma mark - Actions

@@ -1,4 +1,4 @@
-tdd-workshop-v2
+tdd-workshop
 ===============
 
 ## Setup

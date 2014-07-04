@@ -10,5 +10,5 @@ tdd-workshop-v2
 - settings.jar - useful live templates for AppCode
 
 ## Resources
-- [Cedar](https://github.com/pivotal/cedar)
+- [Specta](https://github.com/specta/specta)
 - [Expecta](https://github.com/specta/expecta)

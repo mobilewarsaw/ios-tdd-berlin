@@ -4,6 +4,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AgendaViewController : UITableViewController
+@class AgendaProvider;
+
+
+@interface AgendaViewController : UITableViewController <UICollectionViewDelegate>
+
+@property(nonatomic, strong) AgendaProvider *agendaProvider;
 
 @end

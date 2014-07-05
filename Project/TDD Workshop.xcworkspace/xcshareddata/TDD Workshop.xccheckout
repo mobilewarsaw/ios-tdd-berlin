@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>FF55F495-A5C0-4934-9F1D-48D3954D2235</string>
+	<string>8DB95A5A-4181-48E3-9A82-7598730CF410</string>
 	<key>IDESourceControlProjectName</key>
 	<string>TDD Workshop</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D7F9B798-4A4B-4C6C-B5C8-5258F8C2C614</key>
-		<string>https://github.com/paweldudek/tdd-workshop-v2</string>
+		<key>291D94E1-0B18-40C3-8615-0C56BC074971</key>
+		<string>ssh://github.com/mobile-warsaw/ios-tdd-seed.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Project/TDD Workshop.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D7F9B798-4A4B-4C6C-B5C8-5258F8C2C614</key>
+		<key>291D94E1-0B18-40C3-8615-0C56BC074971</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/paweldudek/tdd-workshop-v2</string>
+	<string>ssh://github.com/mobile-warsaw/ios-tdd-seed.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D7F9B798-4A4B-4C6C-B5C8-5258F8C2C614</string>
+	<string>291D94E1-0B18-40C3-8615-0C56BC074971</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D7F9B798-4A4B-4C6C-B5C8-5258F8C2C614</string>
+			<string>291D94E1-0B18-40C3-8615-0C56BC074971</string>
 			<key>IDESourceControlWCCName</key>
-			<string>tdd-workshop-v2</string>
+			<string>ios-tdd-seed</string>
 		</dict>
 	</array>
 </dict>

@@ -13,4 +13,12 @@
     self.reloadCompletionHandler = completionHandler;
 }
 
+- (void)simulateCompletionWithNewAgendaItems:(NSArray *)newAgendaItems
+{
+    self.agendaItems = newAgendaItems;
+    if (self.reloadCompletionHandler) {
+        self.reloadCompletionHandler();
+    }
+}
+
 @end

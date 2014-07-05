@@ -16,6 +16,8 @@
 
 @property(nonatomic, strong) UITableViewCell *cellToDequeue;
 
+@property(nonatomic) BOOL reloadDataCalled;
+
 - (id)dequeueReusableCellWithIdentifier:(NSString *)identifier;
 
 @end

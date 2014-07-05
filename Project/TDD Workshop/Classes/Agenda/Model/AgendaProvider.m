@@ -22,6 +22,8 @@
     return self;
 }
 
+
+
 - (void)reloadAgendaWithCompletionHandler:(void (^)(void))completionHandler {
     typeof(self) __block __weak weakSelf = self;
     dispatch_async(dispatch_get_global_queue(2, 0), ^{

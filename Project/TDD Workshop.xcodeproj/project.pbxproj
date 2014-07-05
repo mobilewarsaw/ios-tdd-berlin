@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0835AE51E1D442A2BE7765FA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E59A1BB742214388ABE91004 /* libPods.a */; };
+		1EDB80775D394AEE332C91C4 /* AgendaItem+Specs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB8386D3CBFB11DE9C4EDD /* AgendaItem+Specs.m */; };
 		1EDB80AF6BC4C379C818A5CF /* AgendaProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB8361EBA8EEABB97963E4 /* AgendaProviderSpec.m */; };
 		1EDB885EAA0CA775A8707F6E /* FakeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB8A2AB8AECD1BF0ECAECA /* FakeTableView.m */; };
 		1EDB8D90D1C24754015D8FF2 /* FakeAgendaProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB8C06591F6E2CFA397CAF /* FakeAgendaProvider.m */; };
@@ -100,11 +101,13 @@
 
 /* Begin PBXFileReference section */
 		1EDB8361EBA8EEABB97963E4 /* AgendaProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaProviderSpec.m; sourceTree = "<group>"; };
+		1EDB8386D3CBFB11DE9C4EDD /* AgendaItem+Specs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AgendaItem+Specs.m"; sourceTree = "<group>"; };
 		1EDB84F5A15840E705C1A65A /* FakeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeTableView.h; sourceTree = "<group>"; };
 		1EDB86E908039895488C9398 /* AgendaItemFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaItemFixture.m; sourceTree = "<group>"; };
 		1EDB8A2AB8AECD1BF0ECAECA /* FakeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeTableView.m; sourceTree = "<group>"; };
 		1EDB8BDFB344DF3A32724382 /* AgendaItemFixture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaItemFixture.h; sourceTree = "<group>"; };
 		1EDB8C06591F6E2CFA397CAF /* FakeAgendaProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeAgendaProvider.m; sourceTree = "<group>"; };
+		1EDB8DC1FB5FAE1F6CF62B32 /* AgendaItem+Specs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AgendaItem+Specs.h"; sourceTree = "<group>"; };
 		1EDB8FEB587E71943373CE37 /* FakeAgendaProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeAgendaProvider.h; sourceTree = "<group>"; };
 		43C5D4B11904429F002D1766 /* TDD Workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TDD Workshop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43C5D4B41904429F002D1766 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -247,6 +250,15 @@
 			path = Fixtures;
 			sourceTree = "<group>";
 		};
+		1EDB869B4256F93360094676 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1EDB8386D3CBFB11DE9C4EDD /* AgendaItem+Specs.m */,
+				1EDB8DC1FB5FAE1F6CF62B32 /* AgendaItem+Specs.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		1EDB889573FF6D6F835D06D2 /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +320,7 @@
 				43C5D4DD1904429F002D1766 /* Supporting Files */,
 				1EDB889573FF6D6F835D06D2 /* Fakes */,
 				1EDB821A28DD8CAF7BA0E7B6 /* Fixtures */,
+				1EDB869B4256F93360094676 /* Categories */,
 			);
 			path = "TDD WorkshopTests";
 			sourceTree = "<group>";
@@ -841,6 +854,7 @@
 				1EDB8E63A5547729FE9E90FB /* AgendaItemFixture.m in Sources */,
 				5104345F6DBD18816241E3F3 /* StreamItemPreviewViewController.m in Sources */,
 				510430CE778A22D93A35BC09 /* StreamItemPreviewViewControllerSpec.m in Sources */,
+				1EDB80775D394AEE332C91C4 /* AgendaItem+Specs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
